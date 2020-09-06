@@ -7,21 +7,52 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission To Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
 </head>
 
 <body>
-  <div class="container-fluid">
+  <div class="container">
     <div class="jumbotron text-center">
-      <h1>Visit the...</h1>
+      <h1>Mission to Mars</h1>
       <p>Beach. Rainforest. Volcano. Tree House. Sloths.</p>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+      <p><a class="btn btn-primary btn-lg" href="scrape_mars.py" role="button">Get Data!</a></p>
     </div>
-    <img src="{{ vacation.sloth_img }}" alt="Sloth">
-    <h2>NASA Mars News</h2>
-    <h3>Max Temp: {{ vacation.max_temp }}</h3>
-    <h3>Min Temp: {{ vacation.min_temp }}</h3>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2><u>Latest Mars News</u></h2>
+      </div>
+    </div>
+  </br>
+    <div class="row">
+      <div class="col-md-12">
+        <h4>{{mars.news_title}}</h4>
+        <p>{{mars.news_par}}</p>
+      </div>
+    </div>
+  <hr>
+    <div class="row">
+      <div class="col-md-8 border">
+        <h2 class=""><u>Featured Mars Image</u></h2> 
+        </br>
+        <img src="{{mars.featured_image_url}}" alt="Features Mars Image">
+      </div>
+      <div class="col-md-4">
+        </br>
+        <div class="border">
+          <h5>Mars Facts</h5>
+            {{ mars.fact_table | safe }}
+        </div>
+      </div>
+    </div>
+  <hr>
+
   </div>
   </div>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </html>
