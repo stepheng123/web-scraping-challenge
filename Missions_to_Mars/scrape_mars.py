@@ -57,4 +57,4 @@ def scrape_info():
     browser.quit()
 
     # Return results
-    return costa_data
+    return mars_data
